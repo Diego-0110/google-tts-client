@@ -1,0 +1,64 @@
+:root {
+  --main: #1D1B20;
+  --main-variant: #49454F;
+  --bg: #FEF7FF;
+  --container: #F3EDF7;
+  --container-high: #ECE6F0;
+  --outline: #CAC4D0;
+  --primary: #6750A4;
+  --on-primary: #FFFFFF;
+  --secondary: #E8DEF8;
+  --on-secondary: #1D192B;
+  --muted: #49454F;
+  --error: #B3261E;
+
+  --border-outline: 1.5px solid var(--outline);
+  --border-radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main: #E6E0E9;
+    --main-variant: #CAC4D0;
+    --bg: #141218;
+    --container: #211F26;
+    --container-high: #2B2930;
+    --outline: #79747E;
+    --primary: #D0BCFF;
+    --on-primary: #381E72;
+    --secondary: #4A4458;
+    --on-secondary: #E8DEF8;
+    --muted: #CAC4D0;
+    --error: #F2B8B5;
+
+    --border-outline: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+:focus-visible {
+  outline: none;
+}
+
+html,
+body {
+  max-width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--main);
+  font-size: 14px;
+  
+  background-color: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

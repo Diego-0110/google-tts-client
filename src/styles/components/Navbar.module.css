@@ -1,0 +1,18 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 12px 16px;
+  border-bottom: var(--border-outline);
+  background-color: var(--container-high);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoText {
+  font-size: 22px;
+  font-weight: normal;
+}

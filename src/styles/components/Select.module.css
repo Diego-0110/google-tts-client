@@ -1,0 +1,84 @@
+.container {
+  --padding-y: 14px;
+  display: inline-block;
+  position: relative;
+  padding: var(--padding-y) 0px;
+  background-color: inherit;
+}
+
+.label {
+  position: absolute;
+  z-index: 100;
+  top: calc(-8px + var(--padding-y));
+  left: 8px;
+  padding: 0px 4px;
+  color: var(--main-variant);
+  font-size: 12px;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: inherit;
+  transition: color .2s ease-in-out;
+}
+
+.select {
+  position: relative;
+  min-width: 100px;
+  width: 100%;
+  padding: 12px 20px 12px 8px;
+  border-radius: 4px;
+  outline: var(--outline) solid 1.5px;
+  outline-offset: -1.5px;
+
+  appearance: none;
+  text-overflow: ellipsis;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  background-color: inherit;
+  transition: outline-color .2s ease-in-out;
+}
+/* Arrow */
+.container::after {
+	content: '';
+  position: absolute;
+	top: calc(50% - 3px);
+	right: 8px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid var(--outline);
+	pointer-events: none;
+}
+/* On focus */
+.select:focus {
+  outline-color: var(--primary);
+}
+.container:focus-within:not(.error) > .label {
+  color: var(--primary)
+}
+/* On Error */
+.container.error > .label {
+  color: var(--error);
+}
+.container.error > .select {
+  outline-color: var(--error);
+}
+
+.errorMsg {
+  position: absolute;
+  bottom: calc(-6px + var(--padding-y));
+  left: 8px;
+  margin: 0;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0px 4px;
+  font-size: 12px;
+  color: var(--error);
+  background-color: inherit;
+}

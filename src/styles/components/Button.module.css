@@ -1,0 +1,20 @@
+.button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+}
+.button:hover {
+  filter: brightness(0.9);
+}
+.primary {
+  color: var(--on-primary);
+  background-color: var(--primary);
+}
+.secondary {
+  color: var(--on-secondary);
+  font-weight: normal;
+  background-color: var(--secondary);
+}
