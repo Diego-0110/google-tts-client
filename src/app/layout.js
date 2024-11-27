@@ -3,7 +3,7 @@ import Navbar from '@/components/navigation/Navbar'
 
 import '@/styles/globals.css'
 
-const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'] })
+const roboto = Roboto({ weight: ['400', '500', '700'], subsets: ['latin'] })
 
 export const metadata = {
   title: 'Google TTS Client',
