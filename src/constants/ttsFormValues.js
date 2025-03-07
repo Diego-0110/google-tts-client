@@ -3,6 +3,7 @@ export const VOICE_TYPES = [
   { value: 'Wavenet', name: 'WaveNet' },
   { value: 'Neural2' },
   { value: 'Studio' },
+  { value: 'Chirp' },
   { value: 'All' }
 ]
 

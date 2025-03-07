@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { ttsFormSchema } from '@/constants/ttsFormSchema'
+import { TYPES } from '@/constants/ttsOptions'
 const textToSpeech = require('@google-cloud/text-to-speech')
 require('dotenv').config()
 
@@ -33,8 +34,13 @@ export async function POST (request) {
       input: { text },
       // Search the voice name and if is invalid, use the remaining parameters
       voice: { name: voiceName, languageCode: langCode, ssmlGender: gender },
-      audioConfig: { audioEncoding: encType, speakingRate: speed, pitch }
+      audioConfig: {
+        audioEncoding: encType,
+        speakingRate: speed,
+        pitch: voiceName && voiceName.includes(TYPES.chirp) ? undefined : pitch
+      }
     }
+    console.log(gAPIRequest)
     // Text-to-speech request
     let gAPIResponseArray
     try {
